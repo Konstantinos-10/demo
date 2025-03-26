@@ -1,7 +1,7 @@
 # test_calculator.py
 
 import pytest
-from calculator import add, subtract, multiply, divide
+from calculator import add, subtract, multiply, divide, is_even
 
 # Tests for basic arithmetic operations are marked with "math"
 @pytest.mark.math
@@ -18,6 +18,12 @@ def test_subtract():
 def test_multiply():
     assert multiply(3, 4) == 12
     assert multiply(-2, 3) == -6
+
+@pytest.mark.math
+def test_is_even():
+    assert is_even(4) == True
+    assert is_even(5) == False
+    assert is_even(0) == True
 
 # Tests for division and edge cases are marked with "edge"
 @pytest.mark.edge
